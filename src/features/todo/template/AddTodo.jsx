@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { connect } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { addTodo } from '../utils/action';
-
-const AddTodo = ({ dispatch }) => {
+const AddTodo = () => {
+  const dispatch = useDispatch();
   const [input, setInput] = useState('');
 
   function handleAddTodo() {
@@ -18,4 +18,4 @@ const AddTodo = ({ dispatch }) => {
   );
 };
 
-export default connect()(AddTodo);
+export default AddTodo;

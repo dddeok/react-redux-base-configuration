@@ -1,7 +1,12 @@
-import { createStore } from 'redux';
+import { configureStore } from '@reduxjs/toolkit';
+
 import rootReducer from './rootReducer';
-import { composeWithDevTools } from 'redux-devtools-extension';
 
-const store = createStore(rootReducer, composeWithDevTools());
+export const createStore = (preloadedState: any) => {
+  const store = configureStore({
+    reducer: rootReducer,
+    preloadedState,
+  });
 
-export default store;
+  return store;
+};

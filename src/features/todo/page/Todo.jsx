@@ -1,15 +1,12 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { useSelector } from 'react-redux';
+import { selectTodos } from '../utils/reducer';
 import AddTodo from '../template/AddTodo';
 
-const Todo = ({ todos }) => {
+const Todo = () => {
+  const todos = useSelector(selectTodos);
   console.log(todos);
   return <AddTodo />;
 };
 
-function select(state) {
-  return {
-    todos: state.todos,
-  };
-}
-export default connect(select)(Todo);
+export default Todo;

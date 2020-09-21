@@ -1,4 +1,4 @@
-import { combineReducers } from 'redux';
+import { combineReducers } from '@reduxjs/toolkit';
 
 import todoReducer from '../features/todo/utils/reducer';
 const rootReducer = combineReducers({

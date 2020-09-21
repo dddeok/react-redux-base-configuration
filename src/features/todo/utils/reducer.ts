@@ -12,7 +12,7 @@ const initialState: InitialState = {
 const reducer = createReducer(initialState, {
   [addTodo.type]: (state, action: ReturnType<typeof addTodo>) => {
     const text = action.payload;
-    state.todos.unshift(text);
+    state.todos = [...state.todos, text];
   },
 });
 // function reducer(state = initialState, action) {
